@@ -43,7 +43,7 @@ setuptools.setup(
     ],
     entry_points={
         "keystoneclient.auth.plugin": [
-            "rackspace = keystoneclient_rackspace.v2_0:RackspaceAuth"
+            "v2rackspace = keystoneclient_rackspace.v2_0:RackspaceAuth"
         ]
     }
 )
