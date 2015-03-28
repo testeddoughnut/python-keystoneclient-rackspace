@@ -53,5 +53,8 @@ class RackspaceAuth(v2.Auth):
                        dest='api_key',
                        secret=True,
                        help='API key to use'),
+            cfg.StrOpt('tenant-id',
+                       dest='tenant_id',
+                       help='Tenant ID to login with'),
         ])
         return options
