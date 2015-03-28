@@ -29,6 +29,8 @@ setuptools.setup(
     long_description=read_file("README.md"),
     license="Apache License, Version 2.0",
     url="https://github.com/testeddoughnut/python-keystoneclient-rackspace",
+    download_url=("https://github.com/testeddoughnut/"
+                  "python-keystoneclient-rackspace/tarball/0.1"),
     install_requires=['python-keystoneclient'],
     packages=setuptools.find_packages(exclude=['tests', 'tests.*', 'test_*']),
     classifiers=[
