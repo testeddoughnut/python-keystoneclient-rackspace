@@ -10,11 +10,13 @@ class RackspaceAuth(v2.Auth):
     :param string auth_url: Identity service endpoint for authorization.
     :param string username: Username for authentication.
     :param string api_key: API key for authentication.
+    :param string tenant_id: Optional tenant_id.
 
     :raises TypeError: if a api_key or username is not provided.
     """
 
-    def __init__(self, auth_url, username=None, api_key=None, **kwargs):
+    def __init__(self, auth_url, username=None, api_key=None, tenant_id=None,
+                 **kwargs):
         super(RackspaceAuth, self).__init__(auth_url, **kwargs)
 
         if username is None:
@@ -26,13 +28,17 @@ class RackspaceAuth(v2.Auth):
 
         self.username = username
         self.api_key = api_key
+        self.tenant_id = tenant_id
 
     def get_auth_data(self, headers=None):
-        auth = {
-                    'username': self.username,
-                    'apiKey': self.api_key
+        auth = {'RAX-KSKEY:apiKeyCredentials': {
+                        'username': self.username,
+                        'apiKey': self.api_key
+                    }
                 }
-        return {'RAX-KSKEY:apiKeyCredentials': auth}
+        if self.tenant_id:
+            auth['tenantId'] = self.tenant_id
+        return auth
 
     @classmethod
     def get_options(cls):
