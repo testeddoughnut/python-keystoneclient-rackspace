@@ -1,9 +1,9 @@
-# python-keystoneclient-rackspaceauth
+# python-keystoneclient-rackspace
 Plugin for API key authentication in the Rackspace Cloud
 
 Example usage:
 
-    from keystoneclient_rackspaceauth.v2_0 import RackspaceAuth
+    from keystoneclient_rackspace.v2_0 import RackspaceAuth
     from keystoneclient import session
     from novaclient.client import Client
 

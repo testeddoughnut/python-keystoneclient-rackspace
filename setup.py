@@ -21,14 +21,14 @@ def read_file(file_name):
 
 
 setuptools.setup(
-    name="python-keystoneclient-rackspaceauth",
+    name="python-keystoneclient-rackspace",
     version="0.1",
     author="M. David Bennett",
     author_email="mdavidbennett@syntheticworks.com",
     description="Rackspace Auth Plugin for OpenStack Clients.",
     long_description=read_file("README.md"),
     license="Apache License, Version 2.0",
-    url="https://github.com/testeddoughnut/python-keystoneclient-rackspaceauth",
+    url="https://github.com/testeddoughnut/python-keystoneclient-rackspace",
     install_requires=['python-keystoneclient'],
     packages=setuptools.find_packages(exclude=['tests', 'tests.*', 'test_*']),
     classifiers=[
